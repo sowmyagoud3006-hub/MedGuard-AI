@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --color-medical-teal: #06b6d4;
+  --color-medical-teal-dark: #0891b2;
+  --color-medical-teal-light: #ecfeff;
+  --color-medical-emerald: #0d9488;
+  --color-medical-blue: #3b82f6;
+  --color-medical-indigo: #6366f1;
+  --color-medical-rose: #f43f5e;
+  --color-medical-rose-dark: #e11d48;
+}
+
+/* Custom Base Styles */
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.4));
+  }
+  14% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(6, 182, 212, 0.7));
+  }
+  28% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.4));
+  }
+  42% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(6, 182, 212, 0.7));
+  }
+  70% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.4));
+  }
+}
+
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 8s infinite ease-in-out;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s infinite ease-in-out;
+}
+
+/* Background Patterns */
+.bg-grid-pattern-dark {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  animation: grid-move 20s linear infinite;
+}
+
+.bg-grid-pattern-light {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+  animation: grid-move 25s linear infinite;
+}
+
+/* Glassmorphism Cards */
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(6, 182, 212, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.1);
+}
+
+/* Neon Glows */
+.neon-glow-teal {
+  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.3);
+}
+
+.neon-glow-indigo {
+  box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.3);
+}
+
+.neon-glow-rose {
+  box-shadow: 0 0 30px -5px rgba(244, 63, 94, 0.3);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Text Glows */
+.dark .text-glow-cyan {
+  text-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+}
+.dark .text-glow-indigo {
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+}
+.dark .text-glow-white {
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
